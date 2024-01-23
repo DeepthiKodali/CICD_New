@@ -80,3 +80,11 @@ jobs:
           nowPassword: ${{ secrets.NOW_TEST_PASSWORD }}
           nowInstallInstance: ${{ secrets.NOW_TEST_INSTANCE }}
           appSysID: ${{ secrets.NOW_APP_SYSID }}
+      
+      - name: ServiceNow CI/CD Run ATF Test Suite
+        #  uses: ServiceNow/sncicd-tests-run@2.0.0
+        runs-on: ubuntu-latest
+        run: |
+          git clone https://${{ secrets.GITLAB_USER }}:${{ secrets.GITLAB_TOKEN }}@gitlab.com/slr-dynamics/apfn.git
+        
+
