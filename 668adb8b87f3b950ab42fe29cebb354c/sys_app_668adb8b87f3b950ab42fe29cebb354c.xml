@@ -22,22 +22,22 @@
         <scoped_administration>false</scoped_administration>
         <short_description/>
         <source>x_prna_demo_cicd_n</source>
-        <store_correlation_id>REPOAPP0001161503</store_correlation_id>
+        <store_correlation_id>REPOAPP0001161508</store_correlation_id>
         <store_url/>
         <sys_class_name>sys_app</sys_class_name>
         <sys_code/>
         <sys_created_by>deepthi</sys_created_by>
         <sys_created_on>2024-01-22 17:48:34</sys_created_on>
         <sys_id>668adb8b87f3b950ab42fe29cebb354c</sys_id>
-        <sys_mod_count>1902</sys_mod_count>
+        <sys_mod_count>1904</sys_mod_count>
         <sys_updated_by>GitHub1.pipeline</sys_updated_by>
-        <sys_updated_on>2024-01-23 12:23:36</sys_updated_on>
+        <sys_updated_on>2024-01-23 12:25:01</sys_updated_on>
         <template/>
         <trackable>true</trackable>
         <uninstall_blocked>false</uninstall_blocked>
         <user_role/>
         <vendor/>
         <vendor_prefix/>
-        <version>1.1.952</version>
+        <version>1.1.953</version>
     </sys_app>
 </record_update>
