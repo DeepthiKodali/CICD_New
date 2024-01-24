@@ -12,19 +12,19 @@ Testscript.prototype = {
     initialize: function() {
     },
 
-    type: 'Testscript'
+    type: 'Testscript with all the stages and a new test'
 };]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>deepthi</sys_created_by>
         <sys_created_on>2024-01-24 14:55:15</sys_created_on>
         <sys_id>02f5093387ffbd50ab42fe29cebb35d4</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Testscript</sys_name>
         <sys_package display_value="Demo_CICD_New" source="x_prna_demo_cicd_n">668adb8b87f3b950ab42fe29cebb354c</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Demo_CICD_New">668adb8b87f3b950ab42fe29cebb354c</sys_scope>
         <sys_update_name>sys_script_include_02f5093387ffbd50ab42fe29cebb35d4</sys_update_name>
         <sys_updated_by>deepthi</sys_updated_by>
-        <sys_updated_on>2024-01-24 14:55:15</sys_updated_on>
+        <sys_updated_on>2024-01-24 17:23:01</sys_updated_on>
     </sys_script_include>
 </record_update>
