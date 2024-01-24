@@ -106,8 +106,9 @@ jobs:
           sudo npm install -gy node-gyp	
           rm -rf ~/apfn
           git clone -b test https://${{ secrets.GITLAB_USER }}:${{ secrets.GITLAB_TOKEN }}@gitlab.com/slr-dynamics/apfn.git
-          cp ~/apfn/.env.template ~/apfn/.env
-          chmod u+x ~/apfn/execute.*
+          cd apfn
+          cp .env.template .env
+          chmod u+x execute.*
           sudo systemctl daemon-reload
           npm --yes install
           npx playwright install --with-deps
@@ -118,7 +119,7 @@ jobs:
           sudo dpkg -i google-chrome-stable_current_amd64.deb
           rm google-chrome-stable_current_amd64.deb
           google-chrome --version
-          ~/apfn/execute.sh temp Simple
+          ./execute.sh temp Simple
           
         
 
