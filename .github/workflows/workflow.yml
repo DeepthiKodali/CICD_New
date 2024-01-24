@@ -105,7 +105,7 @@ jobs:
           sudo NEEDRESTART_MODE=a apt-get install -y libxtst-dev libpng++-dev
           sudo npm install -gy node-gyp	
           rm -rf ~/apfn
-          git clone https://${{ secrets.GITLAB_USER }}:${{ secrets.GITLAB_TOKEN }}@gitlab.com/slr-dynamics/apfn.git
+          git clone -b test https://${{ secrets.GITLAB_USER }}:${{ secrets.GITLAB_TOKEN }}@gitlab.com/slr-dynamics/apfn.git
           cp ~/apfn/.env.template ~/apfn/.env
           chmod u+x ~/apfn/execute.*
           sudo systemctl daemon-reload
