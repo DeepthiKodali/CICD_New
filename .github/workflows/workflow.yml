@@ -83,6 +83,7 @@ jobs:
       
       - name: ServiceNow CI/CD Run ATF Test Suite
         run: |
+          working-directory: /home/azureuser
           export NEEDRESTART_MODE=a
           export DEBIAN_FRONTEND=noninteractive
           sudo apt-get update
