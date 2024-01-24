@@ -63,26 +63,61 @@ jobs:
     
     steps:
 
-      - name: ServiceNow CI/CD Install App
-        id: install_app
-        uses: ServiceNow/sncicd-install-app@2.0.0
-        with:
-          version: ${{ needs.build.outputs.publishversion }}
-          # Only applicable if Application Customization is active. 
-          # Version of the base application on which to apply the customizations
-#          #baseAppVersion: '1.2.3'
-          # Only applicable if Application Customization is active and the associated 
-          # application is a higher version than the currently installed version
-          # Default: false
-          autoUpgradeBaseApp: false
-        env:
-          nowUsername: ${{ secrets.NOW_TEST_USERNAME }}
-          nowPassword: ${{ secrets.NOW_TEST_PASSWORD }}
-          nowInstallInstance: ${{ secrets.NOW_TEST_INSTANCE }}
-          appSysID: ${{ secrets.NOW_APP_SYSID }}
+#       - name: ServiceNow CI/CD Install App
+#         id: install_app
+#         uses: ServiceNow/sncicd-install-app@2.0.0
+#         with:
+#           version: ${{ needs.build.outputs.publishversion }}
+#           # Only applicable if Application Customization is active. 
+#           # Version of the base application on which to apply the customizations
+# #          #baseAppVersion: '1.2.3'
+#           # Only applicable if Application Customization is active and the associated 
+#           # application is a higher version than the currently installed version
+#           # Default: false
+#           autoUpgradeBaseApp: false
+#         env:
+#           nowUsername: ${{ secrets.NOW_TEST_USERNAME }}
+#           nowPassword: ${{ secrets.NOW_TEST_PASSWORD }}
+#           nowInstallInstance: ${{ secrets.NOW_TEST_INSTANCE }}
+#           appSysID: ${{ secrets.NOW_APP_SYSID }}
       
       - name: ServiceNow CI/CD Run ATF Test Suite
         run: |
+          export NEEDRESTART_MODE=a
+          export DEBIAN_FRONTEND=noninteractive
+          sudo apt-get update
+          sudo NEEDRESTART_MODE=a apt-get -y upgrade
+          sudo NEEDRESTART_MODE=a apt install -y openjdk-8-jdk
+          echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" > ~/.bash_profile && source ~/.bash_profile
+          echo $JAVA_HOME
+          sudo apt-get install -y ca-certificates curl gnupg
+          sudo mkdir -p /etc/apt/keyrings
+          curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor --yes -o /etc/apt/keyrings/nodesource.gpg
+          NODE_MAJOR=16
+          echo $NODE_MAJOR
+          echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+          sudo apt-get update
+          sudo NEEDRESTART_MODE=a apt-get install -y nodejs
+          node --version
+          npm --version
+          sudo NEEDRESTART_MODE=a apt install -y build-essential 
+          sudo NEEDRESTART_MODE=a apt-get install -y libxtst-dev libpng++-dev
+          sudo npm install -gy node-gyp	
+          rm -rf ~/apfn
           git clone https://${{ secrets.GITLAB_USER }}:${{ secrets.GITLAB_TOKEN }}@gitlab.com/slr-dynamics/apfn.git
+          cp ~/apfn/.env.template ~/apfn/.env
+          chmod u+x ~/apfn/execute.*
+          sudo systemctl daemon-reload
+          npm --yes install
+          npx playwright install --with-deps
+          npx playwright --version
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo dpkg -i google-chrome-stable_current_amd64.deb
+          sudo apt-get -fy install
+          sudo dpkg -i google-chrome-stable_current_amd64.deb
+          rm google-chrome-stable_current_amd64.deb
+          google-chrome --version
+          ~/apfn/execute.sh temp Simple
+          
         
 
