@@ -63,23 +63,23 @@ jobs:
     
     steps:
 
-#       - name: ServiceNow CI/CD Install App
-#         id: install_app
-#         uses: ServiceNow/sncicd-install-app@2.0.0
-#         with:
-#           version: ${{ needs.build.outputs.publishversion }}
-#           # Only applicable if Application Customization is active. 
-#           # Version of the base application on which to apply the customizations
-# #          #baseAppVersion: '1.2.3'
-#           # Only applicable if Application Customization is active and the associated 
-#           # application is a higher version than the currently installed version
-#           # Default: false
-#           autoUpgradeBaseApp: false
-#         env:
-#           nowUsername: ${{ secrets.NOW_TEST_USERNAME }}
-#           nowPassword: ${{ secrets.NOW_TEST_PASSWORD }}
-#           nowInstallInstance: ${{ secrets.NOW_TEST_INSTANCE }}
-#           appSysID: ${{ secrets.NOW_APP_SYSID }}
+      - name: ServiceNow CI/CD Install App
+        id: install_app
+        uses: ServiceNow/sncicd-install-app@2.0.0
+        with:
+          version: ${{ needs.build.outputs.publishversion }}
+          # Only applicable if Application Customization is active. 
+          # Version of the base application on which to apply the customizations
+          #baseAppVersion: '1.2.3'
+          # Only applicable if Application Customization is active and the associated 
+          # application is a higher version than the currently installed version
+          # Default: false
+          autoUpgradeBaseApp: false
+        env:
+          nowUsername: ${{ secrets.NOW_TEST_USERNAME }}
+          nowPassword: ${{ secrets.NOW_TEST_PASSWORD }}
+          nowInstallInstance: ${{ secrets.NOW_TEST_INSTANCE }}
+          appSysID: ${{ secrets.NOW_APP_SYSID }}
       
       - name: ServiceNow CI/CD Run ATF Test Suite
         run: |
