@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_prna_demo_cicd_n.Demoscript</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>Demoscript</name>
+        <script><![CDATA[var Demoscript = Class.create();
+Demoscript.prototype = {
+    initialize: function() {
+    },
+
+    type: 'Demoscript - Demo'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>deepthi</sys_created_by>
+        <sys_created_on>2024-01-25 15:11:04</sys_created_on>
+        <sys_id>1723924087444290ab42fe29cebb35d2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Demoscript</sys_name>
+        <sys_package display_value="Demo_CICD_New" source="x_prna_demo_cicd_n">668adb8b87f3b950ab42fe29cebb354c</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Demo_CICD_New">668adb8b87f3b950ab42fe29cebb354c</sys_scope>
+        <sys_update_name>sys_script_include_1723924087444290ab42fe29cebb35d2</sys_update_name>
+        <sys_updated_by>deepthi</sys_updated_by>
+        <sys_updated_on>2024-01-25 15:11:04</sys_updated_on>
+    </sys_script_include>
+</record_update>
