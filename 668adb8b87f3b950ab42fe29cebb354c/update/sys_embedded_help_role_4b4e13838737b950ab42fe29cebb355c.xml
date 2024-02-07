@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role display_value="sn_dd_demo_cicd_new_publishtoapprepo" name="sn_dd_demo_cicd_new_publishtoapprepo">0f4e13838737b950ab42fe29cebb355b</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>deepthi</sys_created_by>
+        <sys_created_on>2024-01-22 18:04:59</sys_created_on>
+        <sys_id>4b4e13838737b950ab42fe29cebb355c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>0f4e13838737b950ab42fe29cebb355b</sys_name>
+        <sys_package display_value="Demo_CICD_New" source="x_prna_demo_cicd_n">668adb8b87f3b950ab42fe29cebb354c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Demo_CICD_New">668adb8b87f3b950ab42fe29cebb354c</sys_scope>
+        <sys_update_name>sys_embedded_help_role_4b4e13838737b950ab42fe29cebb355c</sys_update_name>
+        <sys_updated_by>deepthi</sys_updated_by>
+        <sys_updated_on>2024-01-22 18:04:59</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>
