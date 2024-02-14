@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_prna_demo_cicd_n.Feature_123</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>Feature_123</name>
+        <script><![CDATA[var Feature_123 = Class.create();
+Feature_123.prototype = {
+    initialize: function() {
+    },
+	sayHello: function() {
+		return "Hello!";
+	},
+    type: 'Feature_123'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>7042</sys_created_by>
+        <sys_created_on>2024-02-14 08:34:28</sys_created_on>
+        <sys_id>f4d773161bd0ca50d20b9641b24bcbb2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Feature_123</sys_name>
+        <sys_package display_value="Demo_CICD_New" source="x_prna_demo_cicd_n">668adb8b87f3b950ab42fe29cebb354c</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Demo_CICD_New">668adb8b87f3b950ab42fe29cebb354c</sys_scope>
+        <sys_update_name>sys_script_include_f4d773161bd0ca50d20b9641b24bcbb2</sys_update_name>
+        <sys_updated_by>7042</sys_updated_by>
+        <sys_updated_on>2024-02-14 08:34:28</sys_updated_on>
+    </sys_script_include>
+</record_update>
